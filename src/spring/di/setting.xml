@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:annotation-config /> -->
+	<context:component-scan base-package="spring.di.ui, spring.di.entity" />
+
+	<!-- 생성자 주입을 p 네임스페이스로 설정 -->
+	<!-- <bean id="exam" class="spring.di.entity.NewlecExam" p:eng="100"
+		p:kor="30" />
+	<bean id="exam2" class="spring.di.entity.NewlecExam" p:eng="55"
+		p:kor="10" /> -->
+	<bean id="exam3" class="spring.di.entity.NewlecExam" p:eng="55"
+		p:kor="10" />
+	<!-- <bean id="exam" class="spring.di.entity.NewlecExam"> <constructor-arg 
+		name="eng" value="10"/> <constructor-arg name="kor" value="20"/> <constructor-arg 
+		name="com" value="30"/> <constructor-arg name="math" value="40"/> </bean> -->
+
+	<!-- ExamConsole console = new GridExamConsole(); -->
+	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
+		console.setExam(exam);
+		<property name="exam" ref="exam"></property>
+	</bean> -->
+
+	<!-- <util:list id="exams" list-class="java.util.ArrayList">
+		<bean class="spring.di.entity.NewlecExam" p:eng="30" p:kor="10"></bean>
+		<ref bean="exam" />
+	</util:list> -->
+
+
+	<!-- <bean id="exams" class="java.util.ArrayList"> <constructor-arg> <list> 
+		<bean class="spring.di.entity.NewlecExam" p:eng="30" p:kor="10"></bean> <ref 
+		bean="exam" /> </list> </constructor-arg> </bean> -->
+
+</beans>
